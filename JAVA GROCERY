@@ -1,0 +1,1245 @@
+import java.util.Scanner;
+public class BEST
+{
+    public static void main(String args[])
+    {
+
+        Scanner scanner = new Scanner(System.in);
+
+        //  ========= VARIABLES ========== //
+
+        String savedusername = "";
+        String savedpassword = "";
+        String option = "";
+        boolean HasAccount = false;
+
+        //================= MGA PRUTAS ===============//
+
+        int Apple = 0;
+        int Orange = 0;
+        int Manggo = 0;
+        int Avocado = 0;
+        int Banana = 0;
+        int Grapes = 0;
+        int Pineapple = 0;
+        int Papaya = 0;
+        int Watermelon = 0;
+        int Strawberry = 0;
+        int Blueberry = 0;
+        int Melon = 0;
+        int Lemon = 0;
+
+        //================= PRESYO ===============//
+
+        int PriceApple = 20;
+        int PriceOrange = 15;
+        int PriceManggo = 35;
+        int PriceAvocado = 25;
+        int PriceBanana = 20;
+        int PriceGrapes = 30;
+        int PricePineapple = 40;
+        int PricePapaya = 35;
+        int PriceWatermelon = 35;
+        int PriceStrawberry = 15;
+        int PriceBlueberry = 20;
+        int PriceMelon = 45;
+        int PriceLemon = 25;
+
+        //================ MGA CART ITEMS =============//
+
+        int CartApple = 0;
+        int CartOrange = 0;
+        int CartManggo = 0;
+        int CartAvocado = 0;
+        int CartBanana = 0;
+        int CartGrapes = 0;
+        int CartPineapple = 0;
+        int CartPapaya = 0;
+        int CartWatermelon = 0;
+        int CartStrawberry = 0;
+        int CartBlueberry = 0;
+        int CartMelon = 0;
+        int CartLemon = 0;
+
+        int TotalAmount = 0;
+
+        // ====================== LOGIN AND RELOGIN PROSESO ====================== //
+
+        {   System.out.println("====================================================================================================================");
+            System.out.println(" ________  ________  ________  ________  _______   ________      ___    ___ ");
+            System.out.println("|\\   ____\\|\\   __  \\|\\   __  \\|\\   ____\\|\\  ___ \\ |\\   __  \\    |\\  \\  /  /|");
+            System.out.println("\\ \\  \\___|\\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\___|\\ \\   __/|\\ \\  \\|\\  \\   \\ \\  \\/  / /");
+            System.out.println(" \\ \\  \\  __\\ \\   _  _\\ \\  \\\\\\  \\ \\  \\    \\ \\  \\_|/_\\ \\   _  _\\   \\ \\    / / ");
+            System.out.println("  \\ \\  \\|\\  \\ \\  \\\\  \\\\ \\  \\\\\\  \\ \\  \\____\\ \\  \\_|\\ \\ \\  \\\\  \\|   \\/  /  /  ");
+            System.out.println("   \\ \\_______\\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\_______\\ \\__\\\\ _\\ __/  / /    ");
+            System.out.println("    \\|_______|\\|__|\\|__|\\|_______|\\|_______|\\|_______|\\|__|\\|__|\\___/ /     ");
+            System.out.println("                                                               \\|___|/      ");
+            System.out.println("====================================================================================================================");
+        }
+        while (true)
+        {
+            System.out.println("============= WELCOME TO THE PUREBOLDS ============= ");
+            System.out.println("Are You Have A Membership Card?");
+            System.out.println("YES");
+            System.out.println("NO");
+            System.out.println("Please Type Your Choice [ YES/NO ] Here: ");
+            String kasagutan = scanner.nextLine();
+
+            if (kasagutan.equalsIgnoreCase("YES"))
+            {
+                if (HasAccount)
+                {
+                    System.out.println("No membership found yet. Please Try Again.\n");
+                }
+                while (true)  // ==================== LOGIN ===================== //
+                {
+                    System.out.println("===== PLEASE LOGIN YOUR ACCOUNT =====");
+                    System.out.println("Enter Your Username: ");
+                    String inputusername = scanner.nextLine();
+
+                    System.out.println("Enter Your Password: ");
+                    String inputpassword = scanner.nextLine();
+
+                    if (inputusername.equals(savedusername) && inputpassword.equals(savedpassword))
+                    {
+                        System.out.println("Login Successfully! Welcome," + savedusername + ".\n");
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println("====================================================================================================================");
+                        System.out.println("Incorrect Username or Password. Please Try Again.");
+                        System.out.println("What Do You Want To Do?");
+                        System.out.println("1. BACK");
+                        System.out.println("2. EXIT");
+                        System.out.println("3. SIGN UP");
+                        System.out.println("PLEASE TYPE THE NUMBER: ");
+                        int signup = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (signup == 1 )
+                        {
+                            continue;
+                        }
+                        else if (signup == 2)
+                        {
+                            System.out.println("Okay Thanks For Visiting PureBolds. GoodBye!");
+                            System.exit(0);
+                        }
+                        else if (signup == 3) // ======== SIGN UP PAG WALA PA ACC ======== //
+                        {
+                            System.out.println("You Want to Create Membership Card");
+                            System.out.println("1. YES");
+                            System.out.println("2. NO");
+                            System.out.println("Please Type Your Answer: ");
+                            int MemOption = scanner.nextInt();
+                            scanner.nextLine();
+
+                            if (MemOption == 1 ) // ============= MAIN SIGN UP =============//
+                            {
+                                System.out.println("==========================");
+                                System.out.println("Fill Up The Followings");
+                                System.out.println("Create Username: ");
+                                savedusername = scanner.nextLine();
+
+                                System.out.println("Create Password: ");
+                                savedpassword = scanner.nextLine();
+
+                                System.out.println("==========================");
+                                HasAccount = true;
+                                System.out.println("Membership Card Created Successfully!\n");
+                            }
+                            else if (MemOption == 2 ) // === PAG NAG NO === //
+                            {
+                                System.out.println("What Would You Like To Do?");
+                                System.out.println("1. BACK");
+                                System.out.println("2. EXIT");
+                                int Otheroption = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Otheroption == 1 )
+                                    break;
+                                else if (Otheroption == 2 )
+                                {
+                                    System.out.println("Okay Thank You For Visiting PureBolds.");
+                                    System.exit(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (kasagutan.equalsIgnoreCase("NO")) // ========== SECOND SIGN UP ========== //
+            {
+                System.out.println("===== You Want to Have Membership Card? =====");
+                System.out.println("YES");
+                System.out.println("NO");
+                System.out.println("Please Type Your Answer Here: ");
+                String Option = scanner.nextLine();
+
+                if (Option.equalsIgnoreCase("YES"))
+                {
+                    System.out.println("=======================================");
+                    System.out.println("Please Fill Up The Followings");
+                    System.out.print("Create Username: ");
+                    savedusername = scanner.nextLine();
+
+                    System.out.print("Create Password: ");
+                    savedpassword = scanner.nextLine();
+
+                    System.out.println("=======================================");
+                    HasAccount = true;
+                    System.out.println("Membership Created Successfully!\n");
+
+                    while (true) // ======================== RELOGIN ======================== //
+                    {
+                        System.out.println("====== Please ReLogin Our Membership Card ======");
+                        System.out.println("Enter Your Username: ");
+                        String inputUsername = scanner.nextLine();
+
+                        System.out.println("Enter Your Password: ");
+                        String inputPassword = scanner.nextLine();
+
+                        if (inputUsername.equals(savedusername) && inputPassword.equals(savedpassword))
+                        {
+                            System.out.println("Login Successfully Welcome Back! " + savedusername + ".\n");
+                            break;
+                        }
+                        else
+                        {
+                            System.out.println("Incorrect Username Or Password. Please Try Again.\n");
+                            System.out.println("You Want to Try Again?");
+                            System.out.println("1. YES");
+                            System.out.println("2. NO/EXIT");
+                            int TryOption = scanner.nextInt();
+                            scanner.nextLine();
+
+                            if (TryOption == 1 ) //=== BALIK SA PAG CREATE ===//
+                            {
+                                continue;
+                            }
+                            else if (TryOption == 2 ) //=== EXIT ===//
+                            {
+                                System.out.println("=== Thanks For Visiting PureBolds ===");
+                                System.exit(0);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    System.out.println("Okay, maybe next time.\n");
+                    break;
+                }
+            }
+            else
+            {
+                System.out.println("Invalid option. Please Try Again.\n");
+                break;
+            }
+            while(true)
+            {
+                System.out.println("====== WELCOME TO THE PUREBOLDS ======");
+                System.out.println("PLEASE PRESS THE SECTION NUMBER WOULD YOU LIKE TO GO: ");
+                System.out.println("1. FRUITS");
+                System.out.println("2. MEATS");
+                System.out.println("3. TOILETRIES");
+                System.out.println("4. FROZEN FOODS");
+                System.out.println("5. EXIT");
+                System.out.println("Please Type The Number: ");
+                int Buyoption = scanner.nextInt();
+                scanner.nextLine();
+
+
+                if (Buyoption == 1)            //==== FRUTAS SECTION ====//
+                {
+                    System.out.println("=== Welcome To The Fruits Section ===");
+                    System.out.println("PLEASE CHOOSE YOU WANT TO DO");
+                    System.out.println("1. BUY");
+                    System.out.println("2. BACK");
+                    System.out.println("Please Type Your Answer Here: ");
+                    int Malengke = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (Malengke == 1)
+                    {
+                        while(true)
+                        {
+                            System.out.println("=== FRESH PA NEWLY HARVESTED ===");
+                            System.out.println("Please Choose You Want: ");
+                            System.out.println("1. APPLE");
+                            System.out.println("2. ORANGE");
+                            System.out.println("3. MANGO");
+                            System.out.println("4. AVOCADO");
+                            System.out.println("5. BANANA");
+                            System.out.println("6. GRAPES");
+                            System.out.println("7. PINEAPPLE");
+                            System.out.println("8. PAPAYA");
+                            System.out.println("9. WATERMELON");
+                            System.out.println("10. STRAWBERRY");
+                            System.out.println("11. BLUEBERRY");
+                            System.out.println("12. MELON");
+                            System.out.println("13. LEMON");
+                            System.out.println("14. === CHECK CART ===");
+                            System.out.println("15. === CHECK OUT ===");
+                            int Frutas = scanner.nextInt();
+                            scanner.nextLine();
+
+                            if (Frutas == 1 )  //======================== APPLE =======================//
+                            {
+                                System.out.println("The Price Of APPLE IS 20 Each");
+                                System.out.println("Would You Like To Buy APPLE?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Applebuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Applebuy == 1)
+                                {
+                                    System.out.println("The Price Of APPLE IS 20 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartApple += Binili;
+                                    TotalAmount += Binili * PriceApple;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " APPLES");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying Apple!");
+                                        continue;
+                                    }
+                                }
+                                else if (Applebuy == 2 )
+                                {
+                                    System.out.println("Thankyou For Visiting Apple Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 2) // =================== ORANGE =================== //
+                            {
+                                System.out.println("The Price Of ORANGE IS 15 Each");
+                                System.out.println("Would You Like To ORANGE?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Orangebuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Orangebuy == 1)
+                                {
+                                    System.out.println("The Price Of ORANGE IS 15 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartOrange += Binili;
+                                    TotalAmount += Binili * PriceOrange;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " ORANGE");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying Orange!");
+                                        continue;
+                                    }
+                                }
+                                else if (Orangebuy == 2 )
+                                {
+                                    System.out.println("Thankyou For Visiting Orange Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 3) //===================== MANGO ====================//
+                            {
+                                System.out.println("The Price Of MANGO IS 35 Each");
+                                System.out.println("Would You Like To Buy MANGO?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Mangobuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Mangobuy == 1)
+                                {
+                                    System.out.println("The Price Of MANGO IS 35 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartManggo += Binili;
+                                    TotalAmount += Binili * PriceManggo;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " MANGO");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying MANGO!");
+                                        continue;
+                                    }
+                                }
+                                else if (Mangobuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting MANGO Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 4)  //================= AVOCADO =======================//
+                            {
+                                System.out.println("The Price Of AVOCADO IS 25 Each");
+                                System.out.println("Would You Like To Buy AVOCADO?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Avocadobuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Avocadobuy == 1)
+                                {
+                                    System.out.println("The Price Of AVOCADO IS 25 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartAvocado += Binili;
+                                    TotalAmount += Binili * PriceAvocado;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " AVOCADO");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying AVOCADO!");
+                                        continue;
+                                    }
+                                }
+                                else if (Avocadobuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting AVOCADO Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 5) //======================= BANANA ======================//
+                            {
+                                System.out.println("The Price Of BANANA IS 20 Each");
+                                System.out.println("Would You Like To Buy BANANA");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int bananabuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (bananabuy == 1)
+                                {
+                                    System.out.println("The Price Of BANANA IS 20 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartBanana += Binili;
+                                    TotalAmount += Binili * PriceBanana;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " BANANA");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying BANANA!");
+                                        continue;
+                                    }
+                                }
+                                else if (bananabuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting AVOCADO Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 6) //====================== GRAPES ======================= //
+                            {
+                                System.out.println("The Price Of GRAPES IS 30 Each");
+                                System.out.println("Would You Like To Buy GRAPES");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Grapesbuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Grapesbuy == 1)
+                                {
+                                    System.out.println("The Price Of GRAPES IS 30 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartGrapes += Binili;
+                                    TotalAmount += Binili * PriceGrapes;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " GRAPES");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying GRAPES!");
+                                        continue;
+                                    }
+                                }
+                                else if (Grapesbuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting GRAPES Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 7) //=================== PINEAPPLE ====================//
+                            {
+                                System.out.println("The Price Of PINEAPPLE IS 40 Each");
+                                System.out.println("Would You Like To Buy PINEAPPLE");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Pineapplebuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Pineapplebuy == 1)
+                                {
+                                    System.out.println("The Price Of PINEAPPLE IS 40 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartPineapple += Binili;
+                                    TotalAmount += Binili * PricePineapple;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " PINEAPPLE");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying PINEAPPLE!");
+                                        continue;
+                                    }
+                                }
+                                else if (Pineapplebuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting PINEAPPLE Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 8) //=================== PAPAYA =====================//
+                            {
+                                System.out.println("The Price Of PAPAYA IS 35 Each");
+                                System.out.println("Would You Like To Buy PAPAYA?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Papayabuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Papayabuy == 1)
+                                {
+                                    System.out.println("The Price Of PAPAYA IS 35 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartPapaya += Binili;
+                                    TotalAmount += Binili * PricePapaya;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " PAPAYA");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying PAPAYA!");
+                                        continue;
+                                    }
+                                }
+                                else if (Papayabuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting PAPAYA Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 9) //=================== WATERMELON ====================//
+                            {
+                                System.out.println("The Price Of WATERMELON IS 35 Each");
+                                System.out.println("Would You Like To Buy WATERMELON?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Watermelonbuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Watermelonbuy == 1)
+                                {
+                                    System.out.println("The Price Of WATERMELON IS 35 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartWatermelon += Binili;
+                                    TotalAmount += Binili * PriceWatermelon;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " WATERMELON");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying WATERMELON!");
+                                        continue;
+                                    }
+                                }
+                                else if (Watermelonbuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting WATERMELON Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 10) //=================== STRAWBERRY =====================//
+                            {
+                                System.out.println("The Price Of STRAWBERRY IS 15 Each");
+                                System.out.println("Would You Like To Buy STRAWBERRY?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Strawberrybuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Strawberrybuy == 1)
+                                {
+                                    System.out.println("The Price Of STRAWBERRY IS 15 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartStrawberry += Binili;
+                                    TotalAmount += Binili * PriceStrawberry;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " STRAWBERRY");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying STRAWBERRY!");
+                                        continue;
+                                    }
+                                }
+                                else if (Strawberrybuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting STRAWBERRY Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 11) //=================== BLUEBERRY =====================//
+                            {
+                                System.out.println("The Price Of BLUEBERRY IS 20 Each");
+                                System.out.println("Would You Like To Buy BLUEBERRY?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Blueberrybuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Blueberrybuy == 1)
+                                {
+                                    System.out.println("The Price Of BLUEBERRY IS 20 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartBlueberry += Binili;
+                                    TotalAmount += Binili * PriceBlueberry;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " BLUEBERRY");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying BLUEBERRY!");
+                                        continue;
+                                    }
+                                }
+                                else if (Blueberrybuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting BLUEBERRY Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 12) //=================== MELON =====================//
+                            {
+                                System.out.println("The Price Of MELON IS 45 Each");
+                                System.out.println("Would You Like To Buy MELON?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Melonbuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Melonbuy == 1)
+                                {
+                                    System.out.println("The Price Of MELON IS 45 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartMelon += Binili;
+                                    TotalAmount += Binili * PriceMelon;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " MELON");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying MELON!");
+                                        continue;
+                                    }
+                                }
+                                else if (Melonbuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting MELON Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 13) //=================== LEMON ====================//
+                            {
+                                System.out.println("The Price Of LEMON IS 25 Each");
+                                System.out.println("Would You Like To Buy LEMON?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type The Number You Want To Do: ");
+                                int Lemonbuy = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Lemonbuy == 1)
+                                {
+                                    System.out.println("The Price Of LEMON IS 25 Each");
+                                    System.out.println("How Many Would You Like To Buy: ");
+                                    int Binili = scanner.nextInt();
+                                    scanner.nextInt();
+
+                                    CartLemon += Binili;
+                                    TotalAmount += Binili * PriceLemon;
+
+                                    System.out.println("You Successfully Added To Your Cart: " + Binili + " LEMON");
+                                    System.out.println("Would You Like To Check Out?");
+                                    System.out.println("1. YES");
+                                    System.out.println("2. NO");
+                                    System.out.println("Please Type Here: ");
+                                    int afterbili = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (afterbili == 1)
+                                    {
+                                        System.out.println("Proceed To Check Out In Number [15]");
+                                        continue;
+                                    }
+                                    else if (afterbili == 2)
+                                    {
+                                        System.out.println("Thankyou For Buying LEMON!");
+                                        continue;
+                                    }
+                                }
+                                else if (Lemonbuy == 2)
+                                {
+                                    System.out.println("Thankyou For Visiting LEMON Aisle!");
+                                    break;
+                                }
+                            }
+                            else if (Frutas == 14) // =================== CHECK CART ================= //
+                            {
+                                while (true)
+                                {
+                                    System.out.println("============= WELCOME TO OUR CART =============");
+                                    System.out.println("THIS IS WHAT YOU HAVE IN OUR CART");
+                                    if (CartApple > 0) System.out.println("APPLES : " + CartApple + " pcs");
+                                    if (CartOrange > 0) System.out.println("ORANGES : " + CartOrange + " pcs");
+                                    if (CartManggo > 0) System.out.println("MANGO : " + CartManggo + " pcs");
+                                    if (CartAvocado > 0) System.out.println("AVOCADO : " + CartAvocado + " pcs");
+                                    if (CartBanana > 0) System.out.println("BANANA : " + CartBanana + " pcs");
+                                    if (CartGrapes > 0) System.out.println("GRAPES : " + CartGrapes + " pcs");
+                                    if (CartPineapple > 0) System.out.println("PINEAPPLE : " + CartPineapple + " pcs");
+                                    if (CartPapaya > 0) System.out.println("PAPAYA : " + CartPapaya + " pcs");
+                                    if (CartWatermelon > 0) System.out.println("WATERMELON : " + CartWatermelon + " pcs");
+                                    if (CartStrawberry > 0) System.out.println("STRAWBERRY : " + CartStrawberry + " pcs");
+                                    if (CartBlueberry > 0) System.out.println("BLUEBERRY : " + CartBlueberry + " pcs");
+                                    if (CartMelon > 0) System.out.println("MELON : " + CartMelon + " pcs");
+                                    if (CartLemon > 0) System.out.println("LEMON : " + CartLemon + " pcs");
+
+                                    System.out.println("TOTAL AMOUNT : ₱" + TotalAmount);
+
+                                    System.out.println("================================================");
+                                    System.out.println("What Would You Like To Do?");
+                                    System.out.println("1. REMOVE ITEM");
+                                    System.out.println("2. READY TO CHECKOUT");
+                                    System.out.println("3. BACK TO SHOPPING");
+                                    int Checkcart = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (Checkcart == 1 )
+                                    {
+                                        System.out.println("Which Item Would You Like To Remove?");
+                                        System.out.println("1. APPLE");
+                                        System.out.println("2. ORANGE");
+                                        System.out.println("3. MANGGO");
+                                        System.out.println("4. AVOCADO");
+                                        System.out.println("5. BANANA");
+                                        System.out.println("6. GRAPES");
+                                        System.out.println("7. PINEAPPLE");
+                                        System.out.println("8. PAPAYA");
+                                        System.out.println("9. WATERMELON");
+                                        System.out.println("10. STRABERRY");
+                                        System.out.println("11. BLUEBERRY");
+                                        System.out.println("12. MELON");
+                                        System.out.println("13. LEMON");
+                                        System.out.println("Please Type The Number: ");
+                                        int TangalFrutas = scanner.nextInt();
+                                        scanner.nextLine();
+
+                                        System.out.println("How Many Would Like You To Remove?");
+                                        int TangalPiraso = scanner.nextInt();
+                                        scanner.nextLine();
+
+                                        // ================ ALISAN NG CART ================//
+
+                                        if (TangalFrutas == 1 && TangalPiraso <= CartApple)
+                                        {
+                                            CartApple -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceApple;
+                                        }
+                                        else if (TangalFrutas == 2 && TangalPiraso <= CartOrange)
+                                        {
+                                            CartOrange -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceOrange;
+                                        }
+                                        else if (TangalFrutas == 3 && TangalPiraso <= CartManggo)
+                                        {
+                                            CartManggo -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceManggo;
+                                        }
+                                        else if (TangalFrutas == 4 && TangalPiraso <= CartAvocado)
+                                        {
+                                            CartAvocado -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceAvocado;
+                                        }
+                                        else if (TangalFrutas == 5 && TangalPiraso <= CartBanana)
+                                        {
+                                            CartBanana -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceBanana;
+                                        }
+                                        else if (TangalFrutas == 6 && TangalPiraso <= CartGrapes)
+                                        {
+                                            CartGrapes -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceGrapes;
+                                        }
+                                        else if (TangalFrutas == 7 && TangalPiraso <= CartPineapple)
+                                        {
+                                            CartPineapple -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PricePineapple;
+                                        }
+                                        else if (TangalFrutas == 8 && TangalPiraso <= CartPapaya)
+                                        {
+                                            CartPapaya -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PricePapaya;
+                                        }
+                                        else if (TangalFrutas == 9 && TangalPiraso <= CartWatermelon)
+                                        {
+                                            CartWatermelon -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceWatermelon;
+                                        }
+                                        else if (TangalFrutas == 10 && TangalPiraso <= CartStrawberry)
+                                        {
+                                            CartStrawberry -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceStrawberry;
+                                        }
+                                        else if (TangalFrutas == 11 && TangalPiraso <= CartBlueberry)
+                                        {
+                                            CartBlueberry -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceBlueberry;
+                                        }
+                                        else if (TangalFrutas == 12 && TangalPiraso <= CartMelon)
+                                        {
+                                            CartMelon -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceMelon;
+                                        }
+                                        else if (TangalFrutas == 13 && TangalPiraso <= CartLemon)
+                                        {
+                                            CartLemon -= TangalPiraso;
+                                            TotalAmount -= TangalPiraso * PriceLemon;
+                                        }
+                                        else
+                                        {
+                                            System.out.println("Invalid Amount Or Item.");
+                                        }
+                                    }
+                                    else if (Checkcart == 2)
+                                    {
+                                        System.out.println("Ready to check out? YES/NO");
+                                        System.out.println("Please Type Here: ");
+                                        String Ready = scanner.nextLine();
+
+                                        if (Ready.equalsIgnoreCase("YES"))
+                                        {
+                                            System.out.println("==============================================================================================");
+                                            System.out.println("YOU BOUGHT SOME:");
+                                            if (CartApple > 0) System.out.println("APPLES : " + CartApple + " pcs ₱" + (CartApple * PriceApple));
+                                            if (CartOrange > 0) System.out.println("ORANGES : " + CartOrange + " pcs ₱" + (CartOrange * PriceOrange));
+                                            if (CartManggo > 0) System.out.println("MANGO : " + CartManggo + " pcs ₱" + (CartManggo * PriceManggo));
+                                            if (CartAvocado > 0) System.out.println("AVOCADO : " + CartAvocado + " pcs ₱" + (CartAvocado * PriceAvocado));
+                                            if (CartBanana > 0) System.out.println("BANANA : " + CartBanana + " pcs ₱" + (CartBanana * PriceBanana));
+                                            if (CartGrapes > 0) System.out.println("GRAPES : " + CartGrapes + " pcs ₱" + (CartGrapes * PriceGrapes));
+                                            if (CartPineapple > 0) System.out.println("PINEAPPLE : " + CartPineapple + " pcs ₱" + (CartPineapple * PricePineapple));
+                                            if (CartPapaya > 0) System.out.println("PAPAYA : " + CartPapaya + " pcs ₱" + (CartPapaya * PricePapaya));
+                                            if (CartWatermelon > 0) System.out.println("WATERMELON : " + CartWatermelon + " pcs ₱" + (CartWatermelon * PriceWatermelon));
+                                            if (CartStrawberry > 0) System.out.println("STRAWBERRY : " + CartStrawberry + " pcs ₱" + (CartStrawberry * PriceStrawberry));
+                                            if (CartBlueberry > 0) System.out.println("BLUEBERRY : " + CartBlueberry + " pcs ₱" + (CartBlueberry * PriceBlueberry));
+                                            if (CartMelon > 0) System.out.println("MELON : " + CartMelon + " pcs ₱" + (CartMelon * PriceMelon));
+                                            if (CartLemon > 0) System.out.println("LEMON : " + CartLemon + " pcs ₱" + (CartLemon * PriceLemon));
+                                            System.out.println("Thank You For Shopping! And Your Total: ₱" + TotalAmount);
+                                            System.out.println("==============================================================================================");
+                                            System.out.println("Please Come Back Again In PureBolds!!!");
+                                            System.exit(0);
+                                        }
+                                        else
+                                        {
+                                            break;
+                                        }
+                                    }
+                                    else if (Checkcart == 3)
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+                            else if (Frutas == 15)
+                            {
+                                System.out.println("Ready To Check Out?");
+                                System.out.println("1. YES");
+                                System.out.println("2. NO");
+                                System.out.println("Please Type Your Answer: ");
+                                int Cashout = scanner.nextInt();
+                                scanner.nextLine();
+
+                                if (Cashout == 1)
+                                {
+                                    while (true)
+                                    {
+                                        System.out.println("================================================");
+                                        System.out.println("THIS IS WHAT YOU HAVE IN OUR CART");
+                                        if (CartApple > 0) System.out.println("APPLES : " + CartApple + " pcs");
+                                        if (CartOrange > 0) System.out.println("ORANGES : " + CartOrange + " pcs");
+                                        if (CartManggo > 0) System.out.println("MANGO : " + CartManggo + " pcs");
+                                        if (CartAvocado > 0) System.out.println("AVOCADO : " + CartAvocado + " pcs");
+                                        if (CartBanana > 0) System.out.println("BANANA : " + CartBanana + " pcs");
+                                        if (CartGrapes > 0) System.out.println("GRAPES : " + CartGrapes + " pcs");
+                                        if (CartPineapple > 0) System.out.println("PINEAPPLE : " + CartPineapple + " pcs");
+                                        if (CartPapaya > 0) System.out.println("PAPAYA : " + CartPapaya + " pcs");
+                                        if (CartWatermelon > 0) System.out.println("WATERMELON : " + CartWatermelon + " pcs");
+                                        if (CartStrawberry > 0) System.out.println("STRAWBERRY : " + CartStrawberry + " pcs");
+                                        if (CartBlueberry > 0) System.out.println("BLUEBERRY : " + CartBlueberry + " pcs");
+                                        if (CartMelon > 0) System.out.println("MELON : " + CartMelon + " pcs");
+                                        if (CartLemon > 0) System.out.println("LEMON : " + CartLemon + " pcs");
+
+                                        System.out.println("TOTAL AMOUNT : ₱" + TotalAmount);
+
+                                        System.out.println("================================================");
+                                        System.out.println("What Would You Like To Do?");
+                                        System.out.println("1. REMOVE ITEM");
+                                        System.out.println("2. READY TO CHECKOUT");
+                                        System.out.println("3. BACK TO SHOPPING");
+                                        int Checkout = scanner.nextInt();
+                                        scanner.nextLine();
+
+                                        if (Checkout == 1)
+                                        {
+                                            System.out.println("Which Item Would You Like To Remove?");
+                                            System.out.println("1. APPLE");
+                                            System.out.println("2. ORANGE");
+                                            System.out.println("3. MANGGO");
+                                            System.out.println("4. AVOCADO");
+                                            System.out.println("5. BANANA");
+                                            System.out.println("6. GRAPES");
+                                            System.out.println("7. PINEAPPLE");
+                                            System.out.println("8. PAPAYA");
+                                            System.out.println("9. WATERMELON");
+                                            System.out.println("10. STRABERRY");
+                                            System.out.println("11. BLUEBERRY");
+                                            System.out.println("12. MELON");
+                                            System.out.println("13. LEMON");
+                                            System.out.println("Please Type The Number: ");
+                                            int TangalFrutas = scanner.nextInt();
+                                            scanner.nextLine();
+
+                                            System.out.println("How Many Would Like You To Remove?");
+                                            int TangalPiraso = scanner.nextInt();
+                                            scanner.nextLine();
+
+                                            // ================ ALISAN NG CART ================//
+
+                                            if (TangalFrutas == 1 && TangalPiraso <= CartApple)
+                                            {
+                                                CartApple -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceApple;
+                                            }
+                                            else if (TangalFrutas == 2 && TangalPiraso <= CartOrange)
+                                            {
+                                                CartOrange -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceOrange;
+                                            }
+                                            else if (TangalFrutas == 3 && TangalPiraso <= CartManggo)
+                                            {
+                                                CartManggo -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceManggo;
+                                            }
+                                            else if (TangalFrutas == 4 && TangalPiraso <= CartAvocado)
+                                            {
+                                                CartAvocado -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceAvocado;
+                                            }
+                                            else if (TangalFrutas == 5 && TangalPiraso <= CartBanana)
+                                            {
+                                                CartBanana -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceBanana;
+                                            }
+                                            else if (TangalFrutas == 6 && TangalPiraso <= CartGrapes)
+                                            {
+                                                CartGrapes -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceGrapes;
+                                            }
+                                            else if (TangalFrutas == 7 && TangalPiraso <= CartPineapple)
+                                            {
+                                                CartPineapple -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PricePineapple;
+                                            }
+                                            else if (TangalFrutas == 8 && TangalPiraso <= CartPapaya)
+                                            {
+                                                CartPapaya -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PricePapaya;
+                                            }
+                                            else if (TangalFrutas == 9 && TangalPiraso <= CartWatermelon)
+                                            {
+                                                CartWatermelon -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceWatermelon;
+                                            }
+                                            else if (TangalFrutas == 10 && TangalPiraso <= CartStrawberry)
+                                            {
+                                                CartStrawberry -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceStrawberry;
+                                            }
+                                            else if (TangalFrutas == 11 && TangalPiraso <= CartBlueberry)
+                                            {
+                                                CartBlueberry -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceBlueberry;
+                                            }
+                                            else if (TangalFrutas == 12 && TangalPiraso <= CartMelon)
+                                            {
+                                                CartMelon -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceMelon;
+                                            }
+                                            else if (TangalFrutas == 13 && TangalPiraso <= CartLemon)
+                                            {
+                                                CartLemon -= TangalPiraso;
+                                                TotalAmount -= TangalPiraso * PriceLemon;
+                                            }
+                                            else
+                                            {
+                                                System.out.println("Invalid Amount Or Item.");
+                                            }
+                                        }
+                                        else if (Checkout == 2)
+                                        {
+                                            System.out.println("Ready to check out? YES/NO");
+                                            String Ready = scanner.nextLine();
+                                            if (Ready.equalsIgnoreCase("YES"))
+                                            {
+
+
+
+
+                                                System.out.println("==============================================================================================");
+                                                System.out.println("YOU BOUGHT SOME:");
+                                                if (CartApple > 0) System.out.println("APPLES : " + CartApple + " pcs - ₱" + (CartApple * PriceApple));
+                                                if (CartOrange > 0) System.out.println("ORANGES : " + CartOrange + " pcs ₱" + (CartOrange * PriceOrange));
+                                                if (CartManggo > 0) System.out.println("MANGO : " + CartManggo + " pcs ₱" + (CartManggo * PriceManggo));
+                                                if (CartAvocado > 0) System.out.println("AVOCADO : " + CartAvocado + " pcs ₱" + (CartAvocado * PriceAvocado));
+                                                if (CartBanana > 0) System.out.println("BANANA : " + CartBanana + " pcs ₱" + (CartBanana * PriceBanana));
+                                                if (CartGrapes > 0) System.out.println("GRAPES : " + CartGrapes + " pcs ₱" + (CartGrapes * PriceGrapes));
+                                                if (CartPineapple > 0) System.out.println("PINEAPPLE : " + CartPineapple + " pcs ₱" + (CartPineapple * PricePineapple));
+                                                if (CartPapaya > 0) System.out.println("PAPAYA : " + CartPapaya + " pcs ₱" + (CartWatermelon * PricePapaya));
+                                                if (CartWatermelon > 0) System.out.println("WATERMELON : " + CartWatermelon + " pcs ₱" + (CartWatermelon * PriceWatermelon));
+                                                if (CartStrawberry > 0) System.out.println("STRAWBERRY : " + CartStrawberry + " pcs ₱" + (CartStrawberry * PriceStrawberry));
+                                                if (CartBlueberry > 0) System.out.println("BLUEBERRY : " + CartBlueberry + " pcs ₱" + (CartBlueberry * PriceBlueberry));
+                                                if (CartMelon > 0) System.out.println("MELON : " + CartMelon + " pcs ₱" + (CartMelon * PriceMelon));
+                                                if (CartLemon > 0) System.out.println("LEMON : " + CartLemon + " pcs ₱" + (CartLemon * PriceLemon));
+                                                System.out.println("Thank You For Shopping In PureBolds! And Your Total: ₱" + TotalAmount);
+                                                System.out.println("Please Come Back Again In PureBolds!!!");
+                                                System.out.println("==============================================================================================");
+                                                System.exit(0);
+                                            }
+                                            else
+                                            {
+                                                break;
+                                            }
+                                        }
+                                        else if (Checkout == 3)
+                                        {
+                                            break;
+                                        }
+                                    }
+                                }
+                                else if (Cashout == 2)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (Buyoption == 2 || Buyoption == 3 || Buyoption == 4)
+                {
+                        System.out.println("Sorry, This Section is Currently Out Of Stock.");
+                        System.out.println("Would You Want to Go Back Or Exit?");
+                        System.out.println("1. BACK");
+                        System.out.println("2. EXIT");
+                        int choice = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (choice == 1 )
+                        {
+                            continue;
+                        }
+                        else if (choice == 2 )
+                        {
+                            System.out.println("Thanks For Visiting PureBolds!");
+                            System.exit(0);
+                        }
+                }
+            }
+        }
+        scanner.close();
+    }
+}
